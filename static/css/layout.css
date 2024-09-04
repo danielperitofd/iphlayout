@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* Propriedades que se aplicam a todos os elementos da página. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100vw;
+    margin: 3px;
+    background-color: #F0F4F8; /* Fundo azul claro */
+}
+
+/* Formatação comum entre os elementos. */
+header, nav, main, aside, footer {
+    background: #A8C3D9; /* Azul suave */
+    color: #1B2A41; /* Azul escuro para contraste de texto */
+    display: flex;
+    margin: 3px;
+    flex: 1 1 100vw;
+}
+
+/* Seletores para formatação individual. */
+
+header {
+    height: 100px;
+}
+
+header #logo {
+    display: flex;
+    flex: 0 1 200px;
+    background: #BCCCDC; /* Azul ainda mais suave */
+    justify-content: center;
+    align-items: center;
+    color: #1B2A41;
+}
+
+#openMenu, #closeMenu {
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+    display: none;
+    color: #1B2A41;
+}
+
+nav {
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+nav a {
+    margin: 3%;
+    font-size: 15pt;
+    color: #374B66; /* Azul médio para links */
+}
+
+main {
+    height: calc(100vh - 436px);
+    background: #FFFFFF; /* Branco para o conteúdo principal */
+}
+
+aside {
+    height: 100px;
+}
+
+footer {
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Altera o estilo dos elementos para serem apresentados */
+/* em telas menores que 717px. */
+@media only screen and (max-width: 717px) {
+    #openMenu, #closeMenu {
+        display: block;
+    }
+
+    #openMenu {
+        margin-left: auto;
+    }
+
+    #closeMenu {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+    }
+
+    nav {
+        position: fixed;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(168, 195, 217, 0.9); /* Fundo suave com transparência */
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        display: none;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    main {
+        height: calc(100vh - 330px);
+    }
+}
